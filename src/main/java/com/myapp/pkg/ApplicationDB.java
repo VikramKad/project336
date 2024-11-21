@@ -15,7 +15,7 @@ public class ApplicationDB {
 	public Connection getConnection(){
 		
 		//Create a connection string
-		String connectionUrl = "jdbc:mysql://localhost:3306/TrainDatabase";
+		String connectionUrl = "jdbc:mysql://localhost:3306/traindatabase";
 		Connection connection = null;
 		
 		try {
@@ -33,7 +33,7 @@ public class ApplicationDB {
 		}
 		try {
 			//Create a connection to your DB
-			connection = DriverManager.getConnection(connectionUrl,"root", "182003");
+			connection = DriverManager.getConnection(connectionUrl,"root", "Qwer?1012");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
