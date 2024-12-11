@@ -1,29 +1,68 @@
 package com.myapp.pkg;
 
-public class TrainScheduleObject {
+import java.util.ArrayList;
+
+public class TrainScheduleObject implements Comparable<TrainScheduleObject>{
 	
-	int originId;
-	int destinationId;
-	int trainId;
+	String origin;
+	String destination;
 	String transitLine;
 	String departureTime;
 	String arrivalTime;
-	double fare;
+	String date;
+	String fare;
+	ArrayList<String> stops;
 	
-	public TrainScheduleObject(int o_id, int d_id, int t_id, String tl, String dt, String at, double f) {
-		originId = o_id;
-		destinationId = d_id;
-		trainId = t_id;
-		transitLine = tl;
-		departureTime = dt;
-		arrivalTime = at;
-		fare = f;
+	public TrainScheduleObject() {
+		
 	}
 	
-	public String getScheduleHtml() {
-		String html = this.toString();
-		// html = ...
-		return html;
+	public TrainScheduleObject(String origin, String dest, String line, String dt, String at, String date, String fare, ArrayList<String> stops) {
+		this.origin = origin;
+		destination = dest;
+		transitLine = line;
+		departureTime = dt;
+		arrivalTime = at;
+		this.date = date;
+		this.fare = fare;
+		this.stops = stops;
+	}
+	
+	public ArrayList<String> getStops() {
+		return stops;
+	}
+	
+    // Convert fare from String to double removing the dollar sign
+    public double getFareAsDouble() {
+        return Double.parseDouble(fare.replace("$", ""));
+    }
+	
+	public String getOrigin() {
+		return origin;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public String getDeparture() {
+		return departureTime;
+	}
+
+	public String getArrival() {
+		return arrivalTime;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public String getFare() {
+		return fare;
+	}
+
+	public String getTransitLine() {
+		return transitLine;
 	}
 	
 	/**
@@ -31,14 +70,19 @@ public class TrainScheduleObject {
 	 * @return
 	 */
 	public String toStringFormatted() {
-		return transitLine;
+		return "TrainScheduleObject.toStringFormatted()";
 	}
 	
 	/**
 	 * Print all fields of object.
 	 */
 	public String toString() {
-		return originId + "\n" + destinationId + "\n" + trainId + "\n" + transitLine + "\n" + departureTime + "\n" + arrivalTime + "\n" + fare;
+		return origin + "\n" + destination + "\n" + transitLine + "\n" + departureTime + "\n" + arrivalTime + "\n" + date + "\n" + fare;
+	}
+
+	@Override
+	public int compareTo(TrainScheduleObject o) {
+		return Double.compare(this.getFareAsDouble(), o.getFareAsDouble());
 	}
 	
 }
