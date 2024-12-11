@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
 public class ApplicationDB {
-	
 	
 	public ApplicationDB(){
 		
@@ -33,7 +31,7 @@ public class ApplicationDB {
 		}
 		try {
 			//Create a connection to your DB
-			connection = DriverManager.getConnection(connectionUrl,"root", "Az@mASa5uk31021");
+			connection = DriverManager.getConnection(connectionUrl,"root", "Qwer?1012");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,6 +49,11 @@ public class ApplicationDB {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		ApplicationDB dao = new ApplicationDB();
 		Connection connection = dao.getConnection();
@@ -58,4 +61,7 @@ public class ApplicationDB {
 		System.out.println(connection);		
 		dao.closeConnection(connection);
 	}
+	
+	
+
 }
