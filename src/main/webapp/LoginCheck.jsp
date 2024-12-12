@@ -28,6 +28,8 @@
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
+            	session.setAttribute("username", inputUsername);
+            	
                 String tempQuery = "SELECT * FROM customers WHERE username = ?";
                 PreparedStatement tempPS = con.prepareStatement(tempQuery);
                 tempPS.setString(1, inputUsername);

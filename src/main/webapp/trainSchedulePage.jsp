@@ -48,7 +48,7 @@
 	
 		<label for="destDropdown">Train Destination</label>
 		<select id="destDropdown" name ="destination">
-			<option value="">--Select Destination</option>
+			<option value="">--Select Destination--</option>
 			<% for (String station : stations) { %>
 				<option value="<%= station %>"><%= station %></option>
 			<% } %>
@@ -58,7 +58,14 @@
         <input type="date" id="date" name="date" required />
 
 	
-	<button type="button" onClick="fetchSchedules()">Check Schedule</button>
+		<button type="button" onClick="fetchSchedules()">Check Schedule</button>
+	
+		<label for="sortDropdown">Sort By</label>
+		<select id="sortDropdown" name="sort">
+			<option value="">Arrival</option>
+			<option value="">Departure</option>
+			<option value="">Fare</option>
+		</select>
 	
 	
 	<!-- populate response div with train schedules from db query -->
@@ -71,10 +78,12 @@
 			const origin = document.getElementById('originDropdown').value;
 		   	const destination = document.getElementById('destDropdown').value;
 		    const date = document.getElementById('date').value;
+		    const sort = document.getElementById('sortDropdown').value;
 
 		    const url = 'trainScheduleHandler.jsp?origin=' + encodeURIComponent(origin) +
             '&destination=' + encodeURIComponent(destination) + 
-            '&date=' + encodeURIComponent(date);
+            '&date=' + encodeURIComponent(date) +
+            '&sort=' + encodeURIComponent(sort);
 		    
 		    // console.log(url);
 		    fetch(url)

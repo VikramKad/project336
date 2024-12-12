@@ -1,19 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.myapp.pkg.*"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>    
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Customer Home</title>
 </head>
 <body>
-	<form method="post" action="Logout.jsp">
-	    <input type="submit" value="Log Out">
+	<% 
+	String username = (String) session.getAttribute("username");
+	out.print("<p>Welcome, " + username + "</p>");
+	%>
+	<br>
+	Customer Home
+	<br>
+
+	<button onClick="window.location.href='viewReservations.jsp'">View and Cancel Reservations</button>
+	<br>
+
+	<button onClick="window.location.href='ReservationMaker.jsp'">Make a Reservation</button>
+    
+    <form method="post" action="Logout.jsp">
+	   <input type="submit" value="Log Out">
 	</form>
-
-out.print("CUSTOMER");
-
-
-
+    
 </body>
 </html>
