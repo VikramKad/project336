@@ -18,7 +18,8 @@
 	<br>
 	Customer Home
 	<br>
-
+	<button onClick="window.location.href='trainSchedulePage.jsp'">Schedules</button>
+	<br>
 	<button onClick="window.location.href='viewReservations.jsp'">View and Cancel Reservations</button>
 	<br>
 

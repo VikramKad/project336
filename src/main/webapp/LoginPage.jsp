@@ -11,6 +11,8 @@
 </head>
 <body>
 
+	<h2>Welcome To the Train</h2>
+
 	<form method="post" action= "LoginCheck.jsp">
 		<table>
 			<tr>    
@@ -29,6 +31,8 @@
 	    out.print("<p style='color:red;'>" + errorMessage + "</p>");
 	}
 	%>
+	
+	<button onClick="window.location.href='registerCustomer.jsp'">Register as a customer for our trains!</button>
 
 	
 </body>
