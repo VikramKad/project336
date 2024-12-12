@@ -78,7 +78,7 @@
     
     <button onClick="window.location.href='ManageTrainSchedules.jsp'">Manage Train Schedules</button>
     <br>
-    <button onClick="window.location.href='QuestionsAnswers.jsp'">Q&A Train Schedules</button>
+    <button onClick="window.location.href='QuestionsAnswers.jsp'">Q&A</button>
     <br>
     <button onClick="generateReservationsOn()">Generate Reservations On:</button>
     

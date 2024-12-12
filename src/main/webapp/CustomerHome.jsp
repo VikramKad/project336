@@ -23,6 +23,8 @@
 	<br>
 
 	<button onClick="window.location.href='ReservationMaker.jsp'">Make a Reservation</button>
+    <br>
+    <button onClick="window.location.href='CustomerBrowseQuestions.jsp'">Browse Questions</button>
     
     <form method="post" action="Logout.jsp">
 	   <input type="submit" value="Log Out">
