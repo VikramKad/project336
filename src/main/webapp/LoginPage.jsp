@@ -22,8 +22,7 @@
 		</table>
 		<input type="submit" value="Log In">
 	</form>
-	
-	<!-- Error message -->
+
 	<%
 	String errorMessage = (String) request.getAttribute("errorMessage");
 	if (errorMessage != null) {

@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class ApplicationDB {
+	
 	
 	public ApplicationDB(){
 		
@@ -49,11 +51,6 @@ public class ApplicationDB {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		ApplicationDB dao = new ApplicationDB();
 		Connection connection = dao.getConnection();
@@ -61,7 +58,4 @@ public class ApplicationDB {
 		System.out.println(connection);		
 		dao.closeConnection(connection);
 	}
-	
-	
-
 }
